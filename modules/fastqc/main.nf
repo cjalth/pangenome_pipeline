@@ -16,3 +16,7 @@ process FASTQC {
     fastqc.sh "$sample_id" "$reads"
     """
 }
+
+workflow {
+    FASTQC
+}
