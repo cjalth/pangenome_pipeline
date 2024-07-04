@@ -1,11 +1,15 @@
 #!/usr/bin/env nextflow
 
-params.fastq = file(params.fastq)
+params.fastq = params.fastq ?: ''
 
-process FASTQC {
+if (!params.fastq) {
+    error 'Please provide a FASTQ file using --fastq'
+}
+
+process runFastQC {
 
     input:
-    file fastq from params.fastq
+    file fastq from file(params.fastq)
 
     output:
     file("*.html") into qc_results
@@ -17,5 +21,5 @@ process FASTQC {
 }
 
 workflow {
-    FASTQC()
+    runFastQC()
 }
