@@ -1,48 +1,21 @@
-params.outdir = 'results'
-
-process FASTQC {
-    tag "FASTQC on $sample_id"
-    conda 'bioconda::fastqc=0.12.1'
-    publishDir params.outdir, mode:'copy'
-
-    input:
-    tuple val(sample_id), path(reads)
-
-    output:
-    path "fastqc_${sample_id}_logs", emit: logs
-
-    script:
-    """
-    fastqc.sh "$sample_id" "$reads"
-    """
-}
-
-workflow {
-    FASTQC
-}
-
 #!/usr/bin/env nextflow
 
-params.reads = "${launchDir}/data/*.fq.gz"
+params.fastq = file(params.fastq)
 
-/**
- * Quality control fastq
- */
-
-reads_ch = Channel
-    .fromPath( params.reads )
-    
-process fastqc {
+process FASTQC {
 
     input:
-    path read  
-    
+    file fastq from params.fastq
+
+    output:
+    file("*.html") into qc_results
+
     script:
     """
-    fastqc ${read}
+    fastqc $fastq
     """
 }
 
 workflow {
-    fastqc(reads_ch)
+    FASTQC()
 }
