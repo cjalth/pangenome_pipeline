@@ -1,25 +1,34 @@
 #!/usr/bin/env nextflow
 
-params.fastq = params.fastq ?: ''
+nextflow.enable.dsl = 2
 
-if (!params.fastq) {
-    error 'Please provide a FASTQ file using --fastq'
-}
+params.fastq = '../../mock.fq'
 
-process runFastQC {
+process FASTQC {
+    conda 'bioconda::fastqc=0.12.1'
+    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
+        'https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0' :
+        'biocontainers/fastqc:0.12.1--hdfd78af_0' }"
 
     input:
-    file fastq from file(params.fastq)
-
-    output:
-    file("*.html") into qc_results
+    file fastq
 
     script:
     """
+    mkdir -p fastqc_results
     fastqc $fastq
+
+    for zip in fastqc_results/*.zip
+    do
+        unzip -d fastqc_results ${zip}
+    done
+
+    rm fastqc_results/*.zip
+    rm fastqc_results/*.html
     """
 }
 
 workflow {
-    runFastQC()
+    FASTQC(fastq: params.fastq)
 }
+
