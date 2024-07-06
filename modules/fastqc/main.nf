@@ -2,7 +2,7 @@
 
 nextflow.enable.dsl = 2
 
-params.fastq = '../../mock.fq'
+params.fastq = '/srv/scratch/canpang/pangenome_pipeline/mock_data.fq'
 
 process FASTQC {
     conda 'bioconda::fastqc=0.12.1'
@@ -15,20 +15,20 @@ process FASTQC {
 
     script:
     """
-    mkdir -p fastqc_results
-    fastqc $fastq
+    mkdir -p /srv/scratch/canpang/pangenome_pipeline/results
+    rm -rf /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc
 
-    for zip in fastqc_results/*.zip
-    do
-        unzip -d fastqc_results ${zip}
-    done
+    fastqc -o /srv/scratch/canpang/pangenome_pipeline/results /srv/scratch/canpang/pangenome_pipeline/mock_data.fq
 
-    rm fastqc_results/*.zip
-    rm fastqc_results/*.html
+    unzip -d /srv/scratch/canpang/pangenome_pipeline/results /srv/scratch/canpang/pangenome_pipeline/results/*.zip
+
+    rm /srv/scratch/canpang/pangenome_pipeline/results/*.zip
+    rm /srv/scratch/canpang/pangenome_pipeline/results/*.html
+
     """
 }
 
 workflow {
     FASTQC(fastq: params.fastq)
 }
-
+    
