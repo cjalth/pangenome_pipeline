@@ -18,7 +18,7 @@ process multiqc {
     """
 }
 
-// Define the process for Samtools to convert BAM to FASTQ
+// Define the process for Samtools to convert BAM to FASTA
 process samtools_fasta {
     input:
     path bam
@@ -29,22 +29,6 @@ process samtools_fasta {
     script:
     """
     samtools fasta $bam > ${params.outdir}/output.fasta
-
-    samtools view -u -f 1 -F 12 $bam > map_map.bam
-    samtools view -u -f 4 -F 264 $bam > unmap_map.bam
-    samtools view -u -f 8 -F 260 $bam > map_unmap.bam
-    samtools view -u -f 12 -F 256 $bam > unmap_unmap.bam
-
-    samtools merge -u unmapped.bam unmap_map.bam map_unmap.bam unmap_unmap.bam
-
-    samtools sort -n map_map.bam mapped.sort
-    samtools sort -n unmapped.bam unmapped.sort
-
-    bamToFastq -i mapped.sort.bam -fq mapped.1.fastq -fq2 mapped.2.fastq
-    bamToFastq -i unmapped.sort.bam -fq unmapped.1.fastq -fq2 unmapped.2.fastq
-
-    cat mapped.1.fastq unmapped.1.fastq > seq.1.fastq
-    cat mapped.2.fastq unmapped.2.fastq > seq.2.fastq
     """
 }
 
