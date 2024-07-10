@@ -1,0 +1,5 @@
+2024-07-10 13:39:36	4.2s	backstabbing_sanger	ERR	c57e0649089383ab6e0bf0fad9b4e4e2	da244399-2b19-462e-99d1-e2e1373e5269	nextflow run main.nf
+2024-07-10 13:40:10	4s	suspicious_franklin	ERR	ee8f301ffedd81048d10355ad99a7f35	73cfa2db-93fc-400c-9870-ecd8d9c5b840	nextflow run main.nf
+2024-07-10 13:42:42	4.2s	cheeky_legentil	ERR	3cf8d65a7381f9c6b420ea280cdd7c67	71d1a398-cdec-4113-9299-3df3235a3535	nextflow run main.nf
+2024-07-10 13:45:34	5s	irreverent_allen	ERR	ee8f301ffedd81048d10355ad99a7f35	7a8960c4-b846-4a97-9a38-b454eb7e6cdd	nextflow run main.nf --input /srv/scratch/canpang/pangenome_pipeline/mock_datab.bam --outdir /srv/scratch/canpang/pangenome_pipeline/results
+2024-07-10 13:46:04	4.6s	crazy_kimura	ERR	948907d98b02e2c7b7fec15e81fb346a	b9ef6f77-0e6e-45b1-ab80-f75956442d3b	nextflow run main.nf
