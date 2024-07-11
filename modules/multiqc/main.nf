@@ -2,29 +2,23 @@
 
 nextflow.enable.dsl = 2
 
-params.input = '/srv/scratch/canpang/pangenome_pipeline/'
-params.outdir = '/srv/scratch/canpang/pangenome_pipeline/results'
+params.reads = "/srv/scratch/canpang/pangenome_pipeline"
+params.outdir = "/srv/scratch/canpang/pangenome_pipeline/results"
 
 process MULTIQC {
     conda 'bioconda::multiqc=1.17'
-    publishDir params.outdir, mode: 'copy'
 
     input:
-    path bam_file
-
-    output:
-    path "${params.outdir}/multiqc_report.html", emit: report
+    file reads
 
     script:
     """
-    mkdir -p ${params.outdir}
-    multiqc $bam_file -o ${params.outdir}
+    mkdir -p ${params.outdir}/multiqc_report
+    multiqc $params.reads -o ${params.outdir}/multiqc_report
     """
 }
 
 workflow {
-    MULTIQC(bam_file: file(params.input))
+    MULTIQC(reads: params.reads)
 }
-
-
 
