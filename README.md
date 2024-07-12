@@ -6,4 +6,4 @@ Here we seek to assess the feasibility of using the human pangenome to improve c
 
 ## Our Solution
 
-We have created this pipeline which ...
+We have created this pipeline which takes an aligned BAM file and creates a graph in which a user can utilise to observe patterns and adds it to the overall human pangenome reference. 
