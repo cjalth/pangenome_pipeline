@@ -1,0 +1,82 @@
+Jul.-05 21:25:43.507 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Jul.-05 21:25:43.741 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Jul.-05 21:25:43.759 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/z5421465/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Jul.-05 21:25:43.794 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul.-05 21:25:43.796 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul.-05 21:25:43.799 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul.-05 21:25:43.810 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul.-05 21:25:43.878 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Jul.-05 21:25:43.896 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [nauseous_lorenz] DSL2 - revision: 1268ebd089
+Jul.-05 21:25:43.897 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul.-05 21:25:43.897 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul.-05 21:25:43.906 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/z5421465/.nextflow/secrets/store.json
+Jul.-05 21:25:43.913 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1e008f36] - activable => nextflow.secret.LocalSecretsProvider@1e008f36
+Jul.-05 21:25:43.976 [main] DEBUG nextflow.Session - Session UUID: 5108b9b7-ab97-4026-9085-0c3526049e5c
+Jul.-05 21:25:43.976 [main] DEBUG nextflow.Session - Run name: nauseous_lorenz
+Jul.-05 21:25:43.978 [main] DEBUG nextflow.Session - Executor pool size: 4
+Jul.-05 21:25:43.986 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul.-05 21:25:43.990 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul.-05 21:25:44.038 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC (13-01-2024 09:01 AEDT)
+  System: Linux 4.18.0-513.24.1.el8_9.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.17+8
+  Encoding: UTF-8 (UTF-8)
+  Process: 1968298@katana2 [10.197.42.130]
+  CPUs: 4 - Mem: 31.4 GB (15 GB) - Swap: 2 GB (1.7 GB)
+Jul.-05 21:25:44.086 [main] DEBUG nextflow.Session - Work-dir: /srv/scratch/canpang/pangenome_pipeline/modules/fastqc/work [nfs]
+Jul.-05 21:25:44.087 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /srv/scratch/canpang/pangenome_pipeline/modules/fastqc/bin
+Jul.-05 21:25:44.096 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul.-05 21:25:44.106 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul.-05 21:25:44.127 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul.-05 21:25:44.136 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Jul.-05 21:25:44.462 [main] DEBUG nextflow.Session - Session start
+Jul.-05 21:25:45.003 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul.-05 21:25:45.074 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul.-05 21:25:45.075 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul.-05 21:25:45.080 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul.-05 21:25:45.086 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=31.4 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Jul.-05 21:25:45.088 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul.-05 21:25:45.192 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC
+Jul.-05 21:25:45.193 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Jul.-05 21:25:45.193 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Jul.-05 21:25:45.194 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_7d75c7f69b8d24a9: /srv/scratch/canpang/pangenome_pipeline/modules/fastqc/main.nf
+Jul.-05 21:25:45.194 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul.-05 21:25:45.194 [main] DEBUG nextflow.Session - Session await
+Jul.-05 21:25:45.487 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul.-05 21:25:45.490 [Task submitter] INFO  nextflow.Session - [6d/5bb0d3] Submitted process > FASTQC
+Jul.-05 21:25:45.624 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: FASTQC; status: COMPLETED; exit: 2; error: -; workDir: /srv/scratch/canpang/pangenome_pipeline/modules/fastqc/work/6d/5bb0d3d41144ef73532817616080b5]
+Jul.-05 21:25:45.629 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=FASTQC; work-dir=/srv/scratch/canpang/pangenome_pipeline/modules/fastqc/work/6d/5bb0d3d41144ef73532817616080b5
+  error [nextflow.exception.ProcessFailedException]: Process `FASTQC` terminated with an error exit status (2)
+Jul.-05 21:25:45.653 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'FASTQC'
+
+Caused by:
+  Process `FASTQC` terminated with an error exit status (2)
+
+Command executed:
+
+  mkdir -p fastqc_results
+  fastqc -o ../../../fastqc_results input.1
+
+Command exit status:
+  2
+
+Command output:
+  (empty)
+
+Command error:
+  Specified output directory '../../../fastqc_results' does not exist
+
+Work dir:
+  /srv/scratch/canpang/pangenome_pipeline/modules/fastqc/work/6d/5bb0d3d41144ef73532817616080b5
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+Jul.-05 21:25:45.663 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul.-05 21:25:45.665 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `FASTQC` terminated with an error exit status (2)
+Jul.-05 21:25:45.697 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul.-05 21:25:45.698 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul.-05 21:25:45.701 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=116ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jul.-05 21:25:45.890 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul.-05 21:25:45.929 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
