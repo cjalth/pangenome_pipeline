@@ -23,7 +23,6 @@ process FASTQC {
 
     rm /srv/scratch/canpang/pangenome_pipeline/results/*.zip
     rm /srv/scratch/canpang/pangenome_pipeline/results/*.html
-
     """
 }
 
