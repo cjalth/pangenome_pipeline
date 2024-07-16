@@ -10,20 +10,19 @@ params.outdir = '/srv/scratch/canpang/pangenome_pipeline/results'
 
 process VGGIRAFFE {
     input:
-    file fastq
-
-    output:
-    path "${params.outdir}/giraffe_results/mapped.gam"
+    file min
+    file dist
+    file giraffe
 
     script:
     """
-    mkdir -p ${params.outdir}/giraffe_results
+    mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/giraffe_results
     
-    /srv/scratch/canpang/vg giraffe -Z ${params.gbz} -m ${params.min} -d ${params.dist} -f ${fastq} -o gam > ${params.outdir}/giraffe_results/mapped.gam
+    /srv/scratch/canpang/vg giraffe -Z /srv/scratch/canpang/pangenome_pipeline/results/autoindex_results/index.giraffe.gbz -m /srv/scratch/canpang/pangenome_pipeline/results/autoindex_results/index.min -d /srv/scratch/canpang/pangenome_pipeline/results/autoindex_results/index.dist -f /srv/scratch/canpang/pangenome_pipeline/mock_data.fq > /srv/scratch/canpang/pangenome_pipeline/results/giraffe_results/mapped.gam
     
     """
 }
 
 workflow {
-    VGGIRAFFE(fastq: params.input)
+    VGGIRAFFE(min: /srv/scratch/canpang/pangenome_pipeline/results/autoindex_results/index.min, dist: /srv/scratch/canpang/pangenome_pipeline/results/autoindex_results/index.dist, giraffe: /srv/scratch/canpang/pangenome_pipeline/results/autoindex_results/index.giraffe.gbz)
 }
