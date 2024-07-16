@@ -1,0 +1,2 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	mock_data	/srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/fastqc_data.txt

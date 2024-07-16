@@ -1,0 +1,14 @@
+2024-07-05 22:13:55	2.1s	distraught_morse	ERR	a7c3ac1a5836e63f2d5f85995d82ed33	7356f234-79c4-46aa-847e-5913e012b278	nextflow run main.nf
+2024-07-05 22:14:25	1.7s	stoic_rosalind	ERR	4c036d07d59887ca7301dbb1ba9bbe9a	ed18759d-e5be-45c6-a5aa-ee8e8a49af1b	nextflow run main.nf
+2024-07-05 22:14:42	3.4s	compassionate_legentil	ERR	1326f2b66a16c0243f4ec1cfacc8b855	80e46ba6-b053-41db-8120-82a0ebc2c65d	nextflow run main.nf
+2024-07-05 22:22:06	-	confident_lamarr	-	d175cd5a476f02d906eb2c77baab6fd6	87c7a323-6f84-4fd7-9f05-a705b29cfcb5	nextflow run main.nf
+2024-07-05 22:41:13	2s	infallible_shockley	ERR	46f865d894394b4663a4d178509f96ca	a2778bcd-bff6-4de6-a2a6-788f34ebbaf7	nextflow run main.nf
+2024-07-05 22:41:49	2s	ecstatic_bhabha	ERR	66ea9742078a1c91c6c9e1d64b442201	72cbc3b8-66fd-4234-b922-44a0df0db9de	nextflow run main.nf
+2024-07-05 22:50:40	4.1s	gigantic_carson	ERR	db15c9590e95d969be35d47fcda116e2	8a4695f9-458d-4adf-b662-e2a68d534f61	nextflow run main.nf
+2024-07-05 22:51:14	4.2s	voluminous_roentgen	ERR	db15c9590e95d969be35d47fcda116e2	782a1afd-cb18-4e3f-81fe-6517210405f0	nextflow run main.nf ../../mock_data.fq
+2024-07-05 22:53:44	3.5s	scruffy_bohr	ERR	01f57b1c67b5b51d7d9354c26b4b602f	feeb83a4-8a27-43ee-b7d2-927684e0c93b	nextflow run main.nf ../../mock_data.fq
+2024-07-05 22:54:17	4.3s	evil_poincare	OK	af58a81fffc00fa9d9e52c13d58109ec	a23546ee-6096-48cd-b612-925b801352cf	nextflow run main.nf ../../mock_data.fq
+2024-07-05 22:54:46	3.6s	festering_raman	OK	af58a81fffc00fa9d9e52c13d58109ec	9a011153-33ce-4ec4-8708-cbc5a92bde80	nextflow run main.nf
+2024-07-05 23:17:38	3s	condescending_leavitt	ERR	180ca97e852f83653037b93e5775ae8f	8558ad63-8659-449b-88ac-a9923185287d	nextflow run main.nf
+2024-07-05 23:38:00	4.6s	cheeky_bohr	OK	bcaf455cc6f0dbbbddf3a7d7c66ce580	a24186ae-428e-4960-b14b-6cecd16aabb5	nextflow run main.nf
+2024-07-05 23:38:25	3.3s	nostalgic_booth	ERR	d1fedb7c06642163396d1e9cdda76bec	3517a30b-758a-409e-a196-66975930a32b	nextflow run main.nf

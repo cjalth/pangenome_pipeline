@@ -1,0 +1,3 @@
+Module	Section	Sample Name	Source
+Snippy	snippy	command.err	/srv/scratch/canpang/pangenome_pipeline/modules/multiqc/work/d0/a0d5b010748f37aa237f92ebf04046/.command.err
+Snippy	snippy	command	/srv/scratch/canpang/pangenome_pipeline/modules/multiqc/work/d0/a0d5b010748f37aa237f92ebf04046/.command.log

@@ -1,0 +1,56 @@
+Jul.-05 23:37:59.985 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Jul.-05 23:38:00.361 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Jul.-05 23:38:00.392 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/z5421465/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Jul.-05 23:38:00.470 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul.-05 23:38:00.472 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul.-05 23:38:00.476 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul.-05 23:38:00.497 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul.-05 23:38:00.645 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Jul.-05 23:38:00.667 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [cheeky_bohr] DSL2 - revision: bcaf455cc6
+Jul.-05 23:38:00.668 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul.-05 23:38:00.668 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul.-05 23:38:00.698 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/z5421465/.nextflow/secrets/store.json
+Jul.-05 23:38:00.708 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@6de0f580] - activable => nextflow.secret.LocalSecretsProvider@6de0f580
+Jul.-05 23:38:00.851 [main] DEBUG nextflow.Session - Session UUID: a24186ae-428e-4960-b14b-6cecd16aabb5
+Jul.-05 23:38:00.852 [main] DEBUG nextflow.Session - Run name: cheeky_bohr
+Jul.-05 23:38:00.854 [main] DEBUG nextflow.Session - Executor pool size: 4
+Jul.-05 23:38:00.864 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul.-05 23:38:00.874 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul.-05 23:38:00.954 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC (13-01-2024 09:01 AEDT)
+  System: Linux 4.18.0-513.24.1.el8_9.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.17+8
+  Encoding: UTF-8 (UTF-8)
+  Process: 1987967@katana2 [10.197.42.130]
+  CPUs: 4 - Mem: 31.4 GB (11.2 GB) - Swap: 2 GB (1.7 GB)
+Jul.-05 23:38:01.047 [main] DEBUG nextflow.Session - Work-dir: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/work [nfs]
+Jul.-05 23:38:01.050 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/bin
+Jul.-05 23:38:01.064 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul.-05 23:38:01.086 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul.-05 23:38:01.168 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul.-05 23:38:01.180 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Jul.-05 23:38:01.448 [main] DEBUG nextflow.Session - Session start
+Jul.-05 23:38:02.492 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul.-05 23:38:02.647 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul.-05 23:38:02.647 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul.-05 23:38:02.653 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul.-05 23:38:02.657 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=31.4 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Jul.-05 23:38:02.659 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul.-05 23:38:02.802 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: VGSTATS
+Jul.-05 23:38:02.802 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Jul.-05 23:38:02.802 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VGSTATS
+Jul.-05 23:38:02.803 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_fa18f06c999282d0: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/main.nf
+Jul.-05 23:38:02.803 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul.-05 23:38:02.804 [main] DEBUG nextflow.Session - Session await
+Jul.-05 23:38:03.201 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul.-05 23:38:03.211 [Task submitter] INFO  nextflow.Session - [f3/aa8c2e] Submitted process > VGSTATS
+Jul.-05 23:38:04.354 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: VGSTATS; status: COMPLETED; exit: 0; error: -; workDir: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/work/f3/aa8c2e14d390cf0234f537167837a4]
+Jul.-05 23:38:04.385 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul.-05 23:38:04.393 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul.-05 23:38:04.393 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul.-05 23:38:04.400 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jul.-05 23:38:04.583 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul.-05 23:38:04.618 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jul.-05 23:38:04.618 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

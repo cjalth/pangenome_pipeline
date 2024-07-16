@@ -1,0 +1,85 @@
+Jul.-05 22:41:48.704 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Jul.-05 22:41:48.848 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Jul.-05 22:41:48.883 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/z5421465/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Jul.-05 22:41:48.924 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul.-05 22:41:48.926 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul.-05 22:41:48.929 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul.-05 22:41:48.941 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul.-05 22:41:49.008 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Jul.-05 22:41:49.026 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [ecstatic_bhabha] DSL2 - revision: 66ea974207
+Jul.-05 22:41:49.026 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul.-05 22:41:49.027 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul.-05 22:41:49.036 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/z5421465/.nextflow/secrets/store.json
+Jul.-05 22:41:49.043 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@2ca5f1ed] - activable => nextflow.secret.LocalSecretsProvider@2ca5f1ed
+Jul.-05 22:41:49.108 [main] DEBUG nextflow.Session - Session UUID: 72cbc3b8-66fd-4234-b922-44a0df0db9de
+Jul.-05 22:41:49.108 [main] DEBUG nextflow.Session - Run name: ecstatic_bhabha
+Jul.-05 22:41:49.110 [main] DEBUG nextflow.Session - Executor pool size: 4
+Jul.-05 22:41:49.117 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul.-05 22:41:49.122 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul.-05 22:41:49.151 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC (13-01-2024 09:01 AEDT)
+  System: Linux 4.18.0-513.24.1.el8_9.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.17+8
+  Encoding: UTF-8 (UTF-8)
+  Process: 1982851@katana2 [10.197.42.130]
+  CPUs: 4 - Mem: 31.4 GB (14.4 GB) - Swap: 2 GB (1.7 GB)
+Jul.-05 22:41:49.216 [main] DEBUG nextflow.Session - Work-dir: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/work [nfs]
+Jul.-05 22:41:49.217 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/bin
+Jul.-05 22:41:49.226 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul.-05 22:41:49.235 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul.-05 22:41:49.256 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul.-05 22:41:49.266 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Jul.-05 22:41:49.574 [main] DEBUG nextflow.Session - Session start
+Jul.-05 22:41:50.068 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul.-05 22:41:50.133 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul.-05 22:41:50.133 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul.-05 22:41:50.138 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul.-05 22:41:50.143 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=31.4 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Jul.-05 22:41:50.145 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul.-05 22:41:50.243 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: VGSTATS
+Jul.-05 22:41:50.244 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Jul.-05 22:41:50.244 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VGSTATS
+Jul.-05 22:41:50.245 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_fce4e8e298574715: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/main.nf
+Jul.-05 22:41:50.245 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul.-05 22:41:50.245 [main] DEBUG nextflow.Session - Session await
+Jul.-05 22:41:50.567 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul.-05 22:41:50.571 [Task submitter] INFO  nextflow.Session - [64/5483ec] Submitted process > VGSTATS
+Jul.-05 22:41:50.691 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: VGSTATS; status: COMPLETED; exit: 1; error: -; workDir: /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/work/64/5483ec9842b7c5cce5e81364fc353b]
+Jul.-05 22:41:50.699 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VGSTATS; work-dir=/srv/scratch/canpang/pangenome_pipeline/modules/vgstats/work/64/5483ec9842b7c5cce5e81364fc353b
+  error [nextflow.exception.ProcessFailedException]: Process `VGSTATS` terminated with an error exit status (1)
+Jul.-05 22:41:50.712 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'VGSTATS'
+
+Caused by:
+  Process `VGSTATS` terminated with an error exit status (1)
+
+Command executed:
+
+  mkdir autoindex_results
+  /srv/scratch/canpang/vg autoindex input.1
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  [vg autoindex] Executing command: /srv/scratch/canpang/vg autoindex input.1
+  error:[vg autoindex] Input is not sufficient to create indexes
+  Inputs
+  are insufficient to create target index GCSA
+
+Work dir:
+  /srv/scratch/canpang/pangenome_pipeline/modules/vgstats/work/64/5483ec9842b7c5cce5e81364fc353b
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Jul.-05 22:41:50.719 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul.-05 22:41:50.725 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `VGSTATS` terminated with an error exit status (1)
+Jul.-05 22:41:50.757 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul.-05 22:41:50.758 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul.-05 22:41:50.761 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=34ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jul.-05 22:41:50.973 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul.-05 22:41:51.008 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

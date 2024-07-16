@@ -1,0 +1,5 @@
+Module	Section	Sample Name	Source
+Snippy	snippy	multiqc	/srv/scratch/canpang/pangenome_pipeline/results/multiqc_report/multiqc_data_1/multiqc.log
+Snippy	snippy	multiqc_sources	/srv/scratch/canpang/pangenome_pipeline/results/multiqc_report/multiqc_data_1/multiqc_sources.txt
+Snippy	snippy	multiqc_general_stats	/srv/scratch/canpang/pangenome_pipeline/results/multiqc_report/multiqc_data_1/multiqc_general_stats.txt
+FastQC	all_sections	mock_data	/srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/fastqc_data.txt

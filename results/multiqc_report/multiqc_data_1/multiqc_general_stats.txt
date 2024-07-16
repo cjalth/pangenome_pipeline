@@ -1,0 +1,3 @@
+Sample	Snippy_mqc-generalstats-snippy-VariantTotal
+command	0
+command.err	0

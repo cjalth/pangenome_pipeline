@@ -1,0 +1,3 @@
+Sample	Variant-COMPLEX	Variant-DEL	Variant-INS	Variant-SNP	VariantTotal
+command	0	0	0	0	0
+command.err	0	0	0	0	0
