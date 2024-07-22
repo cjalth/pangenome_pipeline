@@ -13,8 +13,8 @@ process MULTIQC {
 
     script:
     """
-    mkdir -p ${params.outdir}/multiqc_report
-    multiqc $params.reads -o ${params.outdir}/multiqc_report
+    mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
+    multiqc /srv/scratch/canpang/pangenome_pipeline -o /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
     """
 }
 
