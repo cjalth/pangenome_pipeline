@@ -1,0 +1,11 @@
+
+  /// MultiQC 🔍 | v1.13
+
+|           multiqc | MultiQC Version v1.23 now available!
+|           multiqc | Search path : /srv/scratch/canpang/pangenome_pipeline
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 48/48  
+|            fastqc | Found 1 reports
+|           multiqc | Compressing plot data
+|           multiqc | Report      : ../../../../../results/multiqc_report/multiqc_report.html
+|           multiqc | Data        : ../../../../../results/multiqc_report/multiqc_data
+|           multiqc | MultiQC complete
