@@ -5,7 +5,7 @@ nextflow.enable.dsl = 2
 params.input = "/srv/scratch/canpang/pangenome_pipeline/Test1-ready.bam"
 // "/data/bio/giab/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam"
 params.outdir = "/srv/scratch/canpang/pangenome_pipeline/results"
-params.reads = "/srv/scratch/canpang/pangenome_pipeline"
+params.reads = "/srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt"
 
 process SAMTOOLS_STATS {
     conda 'bioconda::samtools=1.14'
