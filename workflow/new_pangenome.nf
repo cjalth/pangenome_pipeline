@@ -3,13 +3,12 @@
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     INPUT FILE
-    To change the input file, just change params.inputFile to the path of your file.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-params.inputFile = '../mock_data.fq'
+params.inputFastq = "../mock_data.fq"
 
 fastq_file = Channel
-    .fromPath( params.inputFile )
+    .fromPath( params.inputFastq )
 
 /*
  * Provide workflow description and default param values to user
@@ -50,6 +49,8 @@ Output:
 */
 include { FASTQC      } from '../modules/fastqc/main.nf'
 include { VGAUTOINDEX } from '../modules/autoindex/main.nf'
+include { VGGIRAFFE   } from '../modules/vggiraffe/main.nf'
+include { VGSTATS      } from '../modules/vgstats/main.nf'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,4 +60,7 @@ include { VGAUTOINDEX } from '../modules/autoindex/main.nf'
 workflow {
     FASTQC(fastq_file)
     VGAUTOINDEX(fastq_file)
+    VGGIRAFFE(fastq_file)
+
+    VGSTATS()
 }
