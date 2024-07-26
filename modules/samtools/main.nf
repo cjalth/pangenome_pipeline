@@ -24,6 +24,7 @@ process SAMTOOLS {
     """
 }
 
+
 process MOVE_FILES {
     input:
     path "extracted/mock_datab_R1.fastq.gz"

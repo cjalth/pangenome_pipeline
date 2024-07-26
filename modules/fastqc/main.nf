@@ -1,18 +1,26 @@
-params.outdir = 'results'
+#!/usr/bin/env nextflow
+
+nextflow.enable.dsl = 2
 
 process FASTQC {
-    tag "FASTQC on $sample_id"
-    conda 'bioconda::fastqc=0.12.1'
-    publishDir params.outdir, mode:'copy'
-
     input:
-    tuple val(sample_id), path(reads)
+    path fastq
 
     output:
-    path "fastqc_${sample_id}_logs", emit: logs
+    path 'summary.txt'
 
     script:
     """
-    fastqc.sh "$sample_id" "$reads"
+    mkdir -p /srv/scratch/canpang/pangenome_pipeline/results
+    find /srv/scratch/canpang/pangenome_pipeline/results/ -type d -name '*_fastqc' -exec rm -rf {} +
+
+    fastqc -o /srv/scratch/canpang/pangenome_pipeline/results $fastq
+    unzip -d /srv/scratch/canpang/pangenome_pipeline/results /srv/scratch/canpang/pangenome_pipeline/results/*.zip > /dev/null 2>&1
+
+    rm /srv/scratch/canpang/pangenome_pipeline/results/*.zip > /dev/null 2>&1
+    rm /srv/scratch/canpang/pangenome_pipeline/results/*.html > /dev/null 2>&1
+
+    summary_dir=\$(find /srv/scratch/canpang/pangenome_pipeline/results/ -type d -name '*_fastqc')
+    cp \${summary_dir}/summary.txt summary.txt
     """
 }

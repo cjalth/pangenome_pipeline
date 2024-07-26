@@ -1,20 +1,24 @@
-params.outdir = 'results'
+#!/usr/bin/env nextflow
+
+nextflow.enable.dsl = 2
+
+params.reads = "/srv/scratch/canpang/pangenome_pipeline"
+params.outdir = "/srv/scratch/canpang/pangenome_pipeline/results"
 
 process MULTIQC {
     conda 'bioconda::multiqc=1.17'
-    publishDir params.outdir, mode:'copy'
 
     input:
-    path '*'
-    path 'config'
-
-    output:
-    path 'multiqc_report.html', emit: report
+    file reads
 
     script:
     """
-    cp $config/* .
-    echo "custom_logo: \$PWD/logo.png" >> multiqc_config.yaml
-    multiqc -o multiqc_report.html .
+    mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
+    multiqc /srv/scratch/canpang/pangenome_pipeline -o /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
     """
 }
+
+workflow {
+    MULTIQC(reads: params.reads)
+}
+
