@@ -1,0 +1,84 @@
+July-24 11:55:34.319 [main] DEBUG nextflow.cli.Launcher - $> nextflow run practice.nf
+July-24 11:55:34.461 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+July-24 11:55:34.479 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/z5477471/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+July-24 11:55:34.506 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+July-24 11:55:34.507 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+July-24 11:55:34.510 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+July-24 11:55:34.522 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+July-24 11:55:34.594 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+July-24 11:55:34.616 [main] INFO  nextflow.cli.CmdRun - Launching `practice.nf` [hungry_shaw] DSL2 - revision: 32d8683063
+July-24 11:55:34.617 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+July-24 11:55:34.617 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+July-24 11:55:34.626 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/z5477471/.nextflow/secrets/store.json
+July-24 11:55:34.632 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@201aa8c1] - activable => nextflow.secret.LocalSecretsProvider@201aa8c1
+July-24 11:55:34.686 [main] DEBUG nextflow.Session - Session UUID: de89fc00-a93c-4d92-96cf-01da6c7cf126
+July-24 11:55:34.687 [main] DEBUG nextflow.Session - Run name: hungry_shaw
+July-24 11:55:34.688 [main] DEBUG nextflow.Session - Executor pool size: 4
+July-24 11:55:34.695 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+July-24 11:55:34.724 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC (13-01-2024 09:01 AEDT)
+  System: Linux 4.18.0-513.24.1.el8_9.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 21.0.3+9-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1991338@katana2 [10.197.42.130]
+  CPUs: 4 - Mem: 31.4 GB (2.6 GB) - Swap: 2 GB (1.5 GB) - Virtual threads ON
+July-24 11:55:34.766 [main] DEBUG nextflow.Session - Work-dir: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/work [nfs]
+July-24 11:55:34.767 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/bin
+July-24 11:55:34.776 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+July-24 11:55:34.789 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+July-24 11:55:34.811 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+July-24 11:55:34.819 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+July-24 11:55:35.086 [main] DEBUG nextflow.Session - Session start
+July-24 11:55:35.583 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+July-24 11:55:35.677 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+July-24 11:55:35.677 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+July-24 11:55:35.683 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+July-24 11:55:35.689 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=31.4 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+July-24 11:55:35.692 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+July-24 11:55:35.792 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+July-24 11:55:35.793 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+July-24 11:55:35.798 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: MULTIQC, SAMTOOLS_STATS
+July-24 11:55:35.799 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+July-24 11:55:35.799 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_STATS
+July-24 11:55:35.800 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+July-24 11:55:35.811 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_7f8d9ee1f526c85c: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/practice.nf
+July-24 11:55:35.811 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+July-24 11:55:35.811 [main] DEBUG nextflow.Session - Session await
+July-24 11:55:35.953 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=SAMTOOLS_STATS; work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Process `SAMTOOLS_STATS` script contains error(s)
+July-24 11:55:35.968 [Actor Thread 4] ERROR nextflow.processor.TaskProcessor - Error executing process > 'SAMTOOLS_STATS'
+
+Caused by:
+  No such variable: bam_file -- Check script 'practice.nf' at line: 19
+
+Source block:
+  """
+      mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats
+      samtools stats $bam_file > samtools_stats/${bam_file.baseName}.txt
+      """
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+July-24 11:55:35.972 [Actor Thread 4] DEBUG nextflow.Session - Session aborted -- Cause: Process `SAMTOOLS_STATS` script contains error(s)
+July-24 11:55:35.987 [Actor Thread 4] DEBUG nextflow.Session - The following nodes are still active:
+[process] SAMTOOLS_STATS
+  status=ACTIVE
+  port 0: (value) bound ; channel: input
+  port 1: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samtools_output
+  port 1: (cntrl) -     ; channel: $
+
+July-24 11:55:35.989 [main] DEBUG nextflow.Session - Session await > all processes finished
+July-24 11:55:35.989 [main] DEBUG nextflow.Session - Session await > all barriers passed
+July-24 11:55:35.989 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+July-24 11:55:35.990 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=SAMTOOLS_STATS; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+July-24 11:55:35.993 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+July-24 11:55:36.193 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+July-24 11:55:36.221 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

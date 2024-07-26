@@ -1,0 +1,21 @@
+Analysis complete for mock_data.fq
+Archive:  /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc.zip
+   creating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/
+   creating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Icons/
+   creating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Icons/fastqc_icon.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Icons/warning.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Icons/error.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Icons/tick.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/summary.txt  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/per_base_quality.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/per_sequence_quality.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/per_base_sequence_content.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/per_sequence_gc_content.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/per_base_n_content.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/sequence_length_distribution.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/duplication_levels.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/Images/adapter_content.png  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/fastqc_report.html  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/fastqc_data.txt  
+  inflating: /srv/scratch/canpang/pangenome_pipeline/results/mock_data_fastqc/fastqc.fo  

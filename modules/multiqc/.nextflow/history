@@ -1,0 +1,8 @@
+2024-07-17 11:02:22	-	distracted_lalande	-	b2eb79d9b755f0ca506df5b0f16f55bb	e2c2d5cf-51c3-4c9d-ae82-fe9b5030dbaa	nextflow run main.nf
+2024-07-17 11:02:46	-	golden_stone	-	d2f3a0c4daf47c47111a7f10856b7a64	f31eaa8a-db11-4fbc-8f21-659fe6583de9	nextflow run main.nf
+2024-07-17 11:02:59	36.4s	exotic_hopper	OK	c0ac968019f143905304e7a1ce400125	1114fb32-2cd6-4564-bd5f-04e91411de1b	nextflow run main.nf
+2024-07-24 11:48:14	-	special_euler	-	72bb98a32b747e45ad4bfb6ac359f01a	d42da93d-f2b7-4dc8-b3ef-f3d9c31c306f	nextflow run practice.nf
+2024-07-24 11:51:01	1.9s	exotic_fourier	ERR	a79a0f6825f980de06b0c45f95675ed5	234dda17-20fb-41e1-9e82-bf8a73886352	nextflow run practice.nf
+2024-07-24 11:55:34	2.2s	hungry_shaw	ERR	32d868306351acbc2c31b81f473d074e	de89fc00-a93c-4d92-96cf-01da6c7cf126	nextflow run practice.nf
+2024-07-24 11:57:45	1.7s	romantic_ritchie	ERR	87a88eb3bb05bd0937ff2194e5185d84	6ce4cf6d-b7ba-40d4-b4c0-af009a5270ce	nextflow run practice.nf
+2024-07-24 11:59:06	2.4s	irreverent_angela	ERR	d4d216ce28810d1375f83267c92a7650	af5733ed-ac38-46b4-a520-7bcfa58f31e6	nextflow run practice.nf

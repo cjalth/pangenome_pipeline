@@ -1,0 +1,154 @@
+July-24 11:59:06.353 [main] DEBUG nextflow.cli.Launcher - $> nextflow run practice.nf
+July-24 11:59:06.525 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+July-24 11:59:06.542 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/z5477471/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+July-24 11:59:06.570 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+July-24 11:59:06.572 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+July-24 11:59:06.575 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+July-24 11:59:06.586 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+July-24 11:59:06.683 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+July-24 11:59:06.717 [main] INFO  nextflow.cli.CmdRun - Launching `practice.nf` [irreverent_angela] DSL2 - revision: d4d216ce28
+July-24 11:59:06.718 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+July-24 11:59:06.718 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+July-24 11:59:06.726 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/z5477471/.nextflow/secrets/store.json
+July-24 11:59:06.734 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@201aa8c1] - activable => nextflow.secret.LocalSecretsProvider@201aa8c1
+July-24 11:59:06.789 [main] DEBUG nextflow.Session - Session UUID: af5733ed-ac38-46b4-a520-7bcfa58f31e6
+July-24 11:59:06.790 [main] DEBUG nextflow.Session - Run name: irreverent_angela
+July-24 11:59:06.791 [main] DEBUG nextflow.Session - Executor pool size: 4
+July-24 11:59:06.798 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+July-24 11:59:06.827 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC (13-01-2024 09:01 AEDT)
+  System: Linux 4.18.0-513.24.1.el8_9.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 21.0.3+9-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1992137@katana2 [10.197.42.130]
+  CPUs: 4 - Mem: 31.4 GB (2.6 GB) - Swap: 2 GB (1.5 GB) - Virtual threads ON
+July-24 11:59:06.869 [main] DEBUG nextflow.Session - Work-dir: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/work [nfs]
+July-24 11:59:06.870 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/bin
+July-24 11:59:06.880 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+July-24 11:59:06.892 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+July-24 11:59:06.915 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+July-24 11:59:06.923 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+July-24 11:59:07.194 [main] DEBUG nextflow.Session - Session start
+July-24 11:59:07.675 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+July-24 11:59:07.798 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+July-24 11:59:07.798 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+July-24 11:59:07.803 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+July-24 11:59:07.810 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=31.4 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+July-24 11:59:07.812 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+July-24 11:59:07.904 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+July-24 11:59:07.904 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+July-24 11:59:07.909 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: MULTIQC, SAMTOOLS_STATS
+July-24 11:59:07.910 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+July-24 11:59:07.910 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_STATS
+July-24 11:59:07.911 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+July-24 11:59:07.915 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_bef924bccd57ee4a: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/practice.nf
+July-24 11:59:07.917 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+July-24 11:59:07.918 [main] DEBUG nextflow.Session - Session await
+July-24 11:59:08.170 [Task submitter] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=SAMTOOLS_STATS; work-dir=/srv/scratch/canpang/pangenome_pipeline/modules/multiqc/work/40/11be12c0e2199e440bb7fe7e233fb2
+  error [java.lang.reflect.UndeclaredThrowableException]: java.lang.reflect.UndeclaredThrowableException
+July-24 11:59:08.176 [Task submitter] ERROR nextflow.processor.TaskProcessor - Error executing process > 'SAMTOOLS_STATS'
+
+Caused by:
+  File `/srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt` is outside the scope of the process work directory: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/work/40/11be12c0e2199e440bb7fe7e233fb2
+
+java.lang.reflect.UndeclaredThrowableException: null
+	at jdk.proxy1/jdk.proxy1.$Proxy28.apply(Unknown Source)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap.invoke(PojoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at nextflow.processor.TaskRun.getOutputFilesNames(TaskRun.groovy:453)
+	at nextflow.processor.TaskBean.<init>(TaskBean.groovy:153)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.processor.TaskRun.toTaskBean(TaskRun.groovy:887)
+	at nextflow.executor.local.LocalTaskHandler.buildTaskWrapper(LocalTaskHandler.groovy:128)
+	at nextflow.executor.local.LocalTaskHandler.submit(LocalTaskHandler.groovy:98)
+	at nextflow.processor.TaskPollingMonitor.submit(TaskPollingMonitor.groovy:196)
+	at nextflow.processor.LocalPollingMonitor.submit(LocalPollingMonitor.groovy:192)
+	at nextflow.processor.TaskPollingMonitor.submitPendingTasks(TaskPollingMonitor.groovy:565)
+	at nextflow.processor.TaskPollingMonitor.submitLoop(TaskPollingMonitor.groovy:390)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1254)
+	at groovy.lang.MetaClassImpl.invokeMethodClosure(MetaClassImpl.java:1042)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1128)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at groovy.lang.Closure.call(Closure.java:427)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at groovy.lang.Closure.run(Closure.java:498)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:309)
+Caused by: nextflow.exception.IllegalFileException: File `/srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt` is outside the scope of the process work directory: /srv/scratch/canpang/pangenome_pipeline/modules/multiqc/work/40/11be12c0e2199e440bb7fe7e233fb2
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.script.params.FileOutParam.relativize(FileOutParam.groovy:233)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194)
+	at nextflow.script.params.FileOutParam.getFilePatterns(FileOutParam.groovy:212)
+	at nextflow.script.params.FileOutParam$getFilePatterns$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at nextflow.processor.TaskRun.getOutputFilesNames0(TaskRun.groovy:460)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:362)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at nextflow.processor.TaskRun$_getOutputFilesNames_closure2.doCall(TaskRun.groovy:453)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at groovy.lang.Closure.call(Closure.java:427)
+	at org.codehaus.groovy.runtime.ConvertedClosure.invokeCustom(ConvertedClosure.java:50)
+	at org.codehaus.groovy.runtime.ConversionHandler.invoke(ConversionHandler.java:112)
+	... 39 common frames omitted
+July-24 11:59:08.205 [Task submitter] DEBUG nextflow.Session - Session aborted -- Cause: java.lang.reflect.UndeclaredThrowableException
+July-24 11:59:08.226 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+July-24 11:59:08.240 [Task submitter] DEBUG nextflow.Session - The following nodes are still active:
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samtools_output
+  port 1: (cntrl) -     ; channel: $
+
+July-24 11:59:08.242 [main] DEBUG nextflow.Session - Session await > all processes finished
+July-24 11:59:08.242 [main] DEBUG nextflow.Session - Session await > all barriers passed
+July-24 11:59:08.247 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=1; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+July-24 11:59:08.435 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+July-24 11:59:08.463 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
