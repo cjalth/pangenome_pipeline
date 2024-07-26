@@ -1,9 +1,0 @@
-[vg autoindex] Executing command: /srv/scratch/canpang/vg autoindex --workflow giraffe -r mock_data.fq -p /srv/scratch/canpang/pangenome_pipeline/results/autoindex_results/index
-[IndexRegistry]: Chunking inputs for parallelism.
-index file mock_data.fq.fai not found, generating...
-[IndexRegistry]: Constructing VG graph from FASTA input.
-[IndexRegistry]: Constructing XG graph from VG graph.
-[IndexRegistry]: Constructing a greedy path cover GBWT
-[IndexRegistry]: Constructing GBZ.
-[IndexRegistry]: Constructing distance index for Giraffe.
-[IndexRegistry]: Constructing minimizer index.
