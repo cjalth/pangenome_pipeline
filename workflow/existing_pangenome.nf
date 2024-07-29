@@ -85,21 +85,21 @@ workflow {
     MULTIQC(bam_file)
 
     // Step 2: Extract Fastq file from BAM file
-    // should be like fastq_file = SAMTOOLS(bam_file)
+    fastq_file = SAMTOOLS(bam_file)
 
-    // // Step 3: Run FASTQC
-    // fastqc_results = FASTQC(fastq_file)
+    // Step 3: Run FASTQC
+    fastqc_results = FASTQC(fastq_file)
 
-    // // Step 4: Run VGAUTOINDEX
-    // autoindex_results = VGAUTOINDEX(fastq_file)
+    // Step 4: Run VGAUTOINDEX
+    autoindex_results = VGAUTOINDEX(fastq_file)
 
-    // // Step 5: Run VGGIRAFFE using the autoindex output - pbs
-    // gamfile = VGGIRAFFE(fastq_file, autoindex_results)
+    // Step 5: Run VGGIRAFFE using the autoindex output - pbs
+    gamfile = VGGIRAFFE(fastq_file, autoindex_results)
 
-    // // Step 6: Run VGSTATS using the giraffe output and view the result - pbs
-    // stats = VGSTATS(gamfile)
+    // Step 6: Run VGSTATS using the giraffe output and view the result - pbs
+    stats = VGSTATS(gamfile)
 
-    // // Step 7: Aggregate and display results
-    // results = AggregateResults(bam_file, fastq_file, fastqc_results, stats)
-    // results.view()
+    // Step 7: Aggregate and display results
+    results = AggregateResults(bam_file, fastq_file, fastqc_results, stats)
+    results.view()
 }
