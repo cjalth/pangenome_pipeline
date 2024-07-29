@@ -6,7 +6,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 params.bam = '../../../../../data/bio/giab/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam'
-params.bamfile = '../Test1-ready.bam'
+params.bamfile = './Test1-ready.bam'
 
 
 bam_file = Channel
@@ -46,7 +46,7 @@ Output:
 include { FASTQC      } from '../modules/fastqc/main.nf'
 include { MULTIQC     } from '../modules/multiqc/main.nf'
 include { SAMTOOLS    } from '../modules/samtools/main.nf'
-// include { VGAUTOINDEX } from '../../Alignment.pbs'
+//include { VGAUTOINDEX } from '../../Alignment.pbs'
 
 process AggregateResults {
     input:
@@ -88,18 +88,18 @@ workflow {
     fastq_file = SAMTOOLS(bam_file)
 
     // Step 3: Run FASTQC
-    fastqc_results = FASTQC(fastq_file)
+    //fastqc_results = FASTQC(fastq_file)
 
     // Step 4: Run VGAUTOINDEX
-    autoindex_results = VGAUTOINDEX(fastq_file)
+    //autoindex_results = VGAUTOINDEX(fastq_file)
 
     // Step 5: Run VGGIRAFFE using the autoindex output - pbs
-    gamfile = VGGIRAFFE(fastq_file, autoindex_results)
+    //gamfile = VGGIRAFFE(fastq_file, autoindex_results)
 
     // Step 6: Run VGSTATS using the giraffe output and view the result - pbs
-    stats = VGSTATS(gamfile)
+   // stats = VGSTATS(gamfile)
 
     // Step 7: Aggregate and display results
-    results = AggregateResults(bam_file, fastq_file, fastqc_results, stats)
-    results.view()
+    //results = AggregateResults(bam_file, fastq_file, fastqc_results, stats)
+   // results.view()
 }
