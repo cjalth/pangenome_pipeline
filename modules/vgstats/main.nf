@@ -13,4 +13,7 @@ process VGSTATS {
     """
     /srv/scratch/canpang/vg stats -a $gamfile > /srv/scratch/canpang/pangenome_pipeline/results/graph_results/stats.txt
     """
+    // qsub VGStats.pbs
+    // /srv/scratch/canpang/vg stats -a $gamfile > /srv/scratch/canpang/pangenome_pipeline/results/graph_results/stats.txt
+    
 }
