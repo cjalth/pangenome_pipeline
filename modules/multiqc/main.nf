@@ -9,7 +9,6 @@ process MULTIQC {
     script:
     """
     mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats
-    touch /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt
     samtools stats $bam > /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt
 
     mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
