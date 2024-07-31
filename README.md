@@ -6,4 +6,9 @@ Here we seek to assess the feasibility of using the human pangenome to improve c
 
 ## Our Solution
 
-We have created this pipeline which takes an aligned BAM file and creates a graph in which a user can utilise to observe patterns and adds it to the overall human pangenome reference. 
+We have created a genomic analysis pipeline using Nextflow to help researchers in their analysis of short-read data with the pangenome by efficiently automating the process of data alignment to the human reference pangenome. This means that instead of manually entering, converting and aligning data samples contained in .bam files to a pangenome graph, researchers are able to input those files into our more streamlined pipeline to automate a process which originally would’ve taken 10 times longer. It also not only reduces the difficulty of detecting structural variation in all genomic contexts but also unveils a new possibility of exploring the functional impact of previously inaccessible variants. 
+
+## How to Use
+
+In order to use and implement the genomic analysis pipeline, 
+
