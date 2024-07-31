@@ -1,10 +1,10 @@
 # Using the human pangenome to improve childhood cancer genome analysis
 The draft human reference genome was published in 2000 and has been improving in quality ever since (now version 38) yet is still missing large swathes of DNA sequence. Furthermore, as researchers have sequenced thousands of individuals, and discovered millions of unique genetic variants, it has become apparent that the linear reference genome is no longer the best way to represent all this genetic variation. 
 
-Thus in response, the pangenome was created, which is a new approach to storing the reference genome as a graph, with loops in the graph representing each unique genetic variant, meaning each individual has a unique path through the graph. This promises to be both a more efficient way to store population-scale genetic variation and a more accurate way to analyse genetic variation in an individual’s genome.
+Thus in response, the [pangenome](https://www.nature.com/articles/s41586-023-05896-x#citeas) was created, which is a new approach to storing the reference genome as a graph, with loops in the graph representing each unique genetic variant, meaning each individual has a unique path through the graph. This promises to be both a more efficient way to store population-scale genetic variation and a more accurate way to analyse genetic variation in an individual’s genome.
 
 ## Our Solution
-We seek to assess the feasibility of using the human pangenome to improve childhood cancer genome analysis. We have created a genomic analysis pipeline using Nextflow to help researchers analyse short-read data with the pangenome by efficiently automating the process of data alignment with the human reference pangenome. 
+We seek to assess the feasibility of using the human pangenome to improve childhood cancer genome analysis. We have created a genomic analysis pipeline using [Nextflow](https://www.nextflow.io/) to help researchers analyse short-read data with the pangenome by efficiently automating the process of data alignment with the human reference pangenome. 
 
 This means that instead of manually entering, converting and aligning data samples contained in .bam files to a pangenome graph, researchers can input those files into our more streamlined pipeline to automate a process that originally would’ve taken 10 times longer. It reduces the difficulty of detecting structural variation in all genomic contexts and unveils a new possibility of exploring the functional impact of previously inaccessible variants. 
 
