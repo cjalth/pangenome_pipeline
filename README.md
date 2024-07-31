@@ -1,5 +1,5 @@
 # Using the human pangenome to improve childhood cancer genome analysis
-The draft human reference genome was published in 2000 and has been improving in quality ever since (now version 38) yet is still missing large swathes of DNA sequence. Furthermore, as researchers have sequenced thousands of individuals, and discovered millions of unique genetic variants, it has become apparent that the linear reference genome is no longer the best way to represent all this genetic variation. 
+The draft human reference genome was published in 2000 and has been improving in quality ever since (now version 38) yet is still missing large swathes of DNA sequences. Furthermore, as researchers have sequenced thousands of individuals, and discovered millions of unique genetic variants, it has become apparent that the linear reference genome is no longer the best way to represent all this genetic variation. 
 
 Thus in response, the [pangenome](https://www.nature.com/articles/s41586-023-05896-x#citeas) was created, which is a new approach to storing the reference genome as a graph, with loops in the graph representing each unique genetic variant, meaning each individual has a unique path through the graph. This promises to be both a more efficient way to store population-scale genetic variation and a more accurate way to analyse genetic variation in an individual’s genome.
 
