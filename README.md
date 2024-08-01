@@ -38,7 +38,7 @@ module add fastqc nextflow java
 module load fastqc nextflow java
 ```
 ```
-nextflow run workflow/new_pangenome.nf
+nextflow run workflow/new_pangenome.nf -c ../nextflow.config
 ```
 All resulting data such as the pangenome graph and the fastqc analysis results would be stored in the [results](https://github.com/cjalth/pangenome_pipeline/tree/main/results) folder
 
@@ -66,7 +66,7 @@ module add fastqc nextflow java multiqc samtools/1.14
 module load fastqc nextflow java multiqc samtools/1.14
 ```
 ```
-nextflow run workflow/existing_pangenome.nf
+nextflow run workflow/existing_pangenome.nf -c ../nextflow.config
 ```
 All resulting data such as the pangenome graph, the fastqc analysis results, the multiqc analysis results and the extracted fastq file from the given .bam file would be stored in the [results](https://github.com/cjalth/pangenome_pipeline/tree/main/results) folder
 
