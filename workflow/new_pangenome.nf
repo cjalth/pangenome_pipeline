@@ -5,8 +5,6 @@
     INPUT FILE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-params.inputFastq = "../mock_data.fq"
-
 fastq_file = Channel
     .fromPath( params.inputFastq )
 
@@ -33,7 +31,7 @@ The pipeline runs in the following procedure:
     5. Finally, the graph file is passed through vg stats to check the graph alignment is correct.
 
 Input:
-    fastq: $params.inputFile
+    fastq: ${params.inputFile}
 
 Output:
     Output folders - All results will be in /results 

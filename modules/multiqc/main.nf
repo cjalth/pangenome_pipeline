@@ -2,23 +2,18 @@
 
 nextflow.enable.dsl = 2
 
-params.reads = "/srv/scratch/canpang/pangenome_pipeline"
-params.outdir = "/srv/scratch/canpang/pangenome_pipeline/results"
-
 process MULTIQC {
-    conda 'bioconda::multiqc=1.17'
-
     input:
-    file reads
+    path bam
 
     script:
     """
+    mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats
+    samtools stats $bam > /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt
+
     mkdir -p /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
-    multiqc /srv/scratch/canpang/pangenome_pipeline -o /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
+    multiqc /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt -o /srv/scratch/canpang/pangenome_pipeline/results/multiqc_report
+
+    rm -rf /srv/scratch/canpang/pangenome_pipeline/results/samtools_stats
     """
 }
-
-workflow {
-    MULTIQC(reads: params.reads)
-}
-
