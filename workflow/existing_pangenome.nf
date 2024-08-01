@@ -30,7 +30,7 @@ This pipeline allows you to use a current pangenome and align short reads to it.
 The pipeline runs in the following procedure:
     1. Takes in an input bam file of the user's choosing.
     2. Passes the bam file into MULTIQC to produce a HTML report that 
-       summarises it's contents and ensures that the bam file is valid
+        summarises it's contents and ensures that the bam file is valid
     3. Passes the bam file into SAMTOOLS to extract the fastq file from it.
     4. Passes the extracted fastq file into FASTQC to produce a HTML report about the fastq alignment.
     5. Using the fastq file, the pipelines passes it through vg autoindex to prepare graph creation index files.

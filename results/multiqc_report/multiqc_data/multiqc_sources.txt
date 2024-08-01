@@ -1,0 +1,2 @@
+Module	Section	Sample Name	Source
+Samtools	stats	bam	/srv/scratch/canpang/pangenome_pipeline/results/samtools_stats/bam.txt
