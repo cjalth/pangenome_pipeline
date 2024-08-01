@@ -5,8 +5,6 @@
     INPUT FILE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-params.inputFastq = "../mock_data.fq"
-
 fastq_file = Channel
     .fromPath( params.inputFastq )
 

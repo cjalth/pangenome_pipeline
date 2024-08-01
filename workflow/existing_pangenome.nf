@@ -5,12 +5,12 @@
     INPUT BAM FILE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-params.bam = '../../../../../data/bio/giab/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam'
-params.bamfile = "../Test1-ready.bam"
 
+// params.bam = '../../../../../data/bio/giab/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam'
+// params.bamfile = "../Test1-ready.bam"
 
 bam_file = Channel
-    .fromPath( params.bamfile )
+    .fromPath( params.inputbam )
 
 /*
  * Provide workflow description and default param values to user
@@ -53,38 +53,8 @@ Output:
 include { FASTQC      } from '../modules/fastqc/main.nf'
 include { MULTIQC     } from '../modules/multiqc/main.nf'
 include { SAMTOOLS    } from '../modules/samtools/main.nf'
-//include { VGAUTOINDEX } from '../../Alignment.pbs'
-include { VGAUTOINDEX } from '../modules/autoindex/main.nf'
-include { VGGIRAFFE } from '../modules/vggiraffe/main.nf'
-include { VGSTATS } from '../modules/vgstats/main.nf'
-
-
-process AggregateResults {
-    input:
-    path bam_file
-    path fastq_file
-    path fastqcResults
-    path statsFile
-
-    output:
-    stdout
-
-    script:
-    """
-    echo "\n<----- Analysis Ready for $bam_file ----->"
-
-    echo "\n<--- MULTIQC Successful for $bam_file --->"
-
-    echo "\n<--- FASTQC Summary --->"
-    sed 's/$fastq_file//g' $fastqcResults > tmp_fastqc_results.txt
-    cat tmp_fastqc_results.txt
-
-    echo "\n<--- VGSTATS Summary --->"
-    cat $statsFile
-
-    echo "\nFor more detailed results locate the results folder from the base directory"
-    """
-}
+include { ALIGNMENT } from '../modules/Alignment/main.nf'
+include { STATS } from '../modules/Stats/main.nf'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,17 +70,13 @@ workflow {
 
     // Step 3: Run FASTQC
     fastqc_results = FASTQC(fastq_file)
+    
+    // Step 4: Alignment
+    alignment_completion = ALIGNMENT()
 
-    // Step 4: Run VGAUTOINDEX
-    autoindex_results = VGAUTOINDEX(fastq_file)
+    // Step 5: Statistics
+    stats_file = STATS(alignment_completion)
 
-    // Step 5: Run VGGIRAFFE using the autoindex output - pbs
-    gamfile = VGGIRAFFE(fastq_file, autoindex_results)
-
-    // Step 6: Run VGSTATS using the giraffe output and view the result - pbs
-    stats = VGSTATS(gamfile)
-
-    // Step 7: Aggregate and display results
-    results = AggregateResults(bam_file, fastq_file, fastqc_results, stats)
-    results.view()
+    // View statistics results
+    stats_file.view()
 }
