@@ -6,9 +6,6 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// params.bam = '../../../../../data/bio/giab/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam'
-// params.bamfile = "../Test1-ready.bam"
-
 bam_file = Channel
     .fromPath( params.inputbam )
 
@@ -53,8 +50,8 @@ Output:
 include { FASTQC      } from '../modules/fastqc/main.nf'
 include { MULTIQC     } from '../modules/multiqc/main.nf'
 include { SAMTOOLS    } from '../modules/samtools/main.nf'
-include { ALIGNMENT } from '../modules/Alignment/main.nf'
-include { STATS } from '../modules/Stats/main.nf'
+include { ALIGNMENT   } from '../modules/Alignment/main.nf'
+include { STATS       } from '../modules/Stats/main.nf'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
