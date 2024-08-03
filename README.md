@@ -92,10 +92,4 @@ You will also need to ensure all modules are downloaded on your system:
 ### New Pangnome
 
 
-
 ### Existing Pangenome
-
-```
-All resulting data such as the pangenome graph, the fastqc analysis results, the multiqc analysis results and the extracted fastq file from the given .bam file would be stored in the [results](https://github.com/cjalth/pangenome_pipeline/tree/main/results) folder
-
-
