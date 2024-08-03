@@ -31,10 +31,10 @@ The pipeline runs in the following procedure:
 5. Finally, the graph file is passed through vg stats to check the graph alignment is correct.
 
 To use this pipeline, you would need to download or *git clone* the **new_pangenome.nf** file in the workflow folder and the following modules: 
-- **[autoindex](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/autoindex)
-- [fastqc]- (https://github.com/cjalth/pangenome_pipeline/tree/main/modules/fastqc)
+- [autoindex](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/autoindex)
+- [fastqc](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/fastqc)
 - [vggiraffe](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/vggiraffe)
-- [vgstats](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/vgstats)**
+- [vgstats](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/vgstats)
 like this:
 ```
 git clone https://github.com/cjalth/pangenome_pipeline.git
