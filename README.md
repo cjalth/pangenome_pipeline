@@ -20,6 +20,40 @@ We have 2 different pipelines available to be run (in /srv/scratch/canpang/pange
 2. **existing_pangenome.nf** which is used to align a given set of data sequences to an already existing pangenome.
 
 We also have a nextflow config file in /srv/scratch/canpang/pangenome_pipeline where you can pass through a file path (starting from /srv/scratch/canpang/pangenome_pipeline/workflow).
+- In nextflow.config we have two parameters: inputbam and inputFastq where you can replace the path to a .BAM File and/or .fq file to suit your research needs (NOTE: inputbam is only read by the exisiting_pangenome.nf and inputFastq is only read by new_pangenome.nf)
+
+### New Pangenome
+After changing the 'inputFastq' parameter in nextflow config navigate to the workflow directory and load the necessary modules (Nextflow and FASTQC). This can be done with the following commands:
+```
+cd workflow
+module add nextflow fastqc
+module load nextflow fastqc
+```
+
+To ensure that the right modules are loaded you can try run module list and see if both Nextflow and FASTQC are loaded. To now run the pipeline, simply enter:
+```
+nextflow run new_pangenome.nf -c ../nextflow.config
+```
+
+This should run the pipeline and the results from FASTQC and VG Stats will be outputted into the terminal, and more details can be found in /srv/scratch/canpang/pangenome_pipeline/results.
+
+### Existing Pangenome
+After changing the 'inputbam' parameter in nextflow.config navigate to the workflow directory and load the necesary modules (Nextflow, MULTIQC, FASTQC and SAMTOOLS). This can be done with the following commands.
+```
+cd workflow
+module add nextflow multiqc samtools/1.14 fastqc 
+module load nextflow multiqc samtools/1.14 fastqc 
+```
+
+To ensure that the right modules are loaded you can try run module list and see if all modules are loaded. To now run the pipeline, simply enter:
+```
+nextflow run existing_pangenome.nf -c ../nextflow.config
+```
+
+This should run the pipeline and the results from VG STATS will be outputted into the terminal, and more details can be found in /srv/scratch/canpang/pangenome_pipeline/results.
+
+
+## How to Use - Non-Katana Users
 
 ### New Pangnome
 This pipeline allows you to create your own pangenome and then align the sequences.
