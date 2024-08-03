@@ -50,12 +50,12 @@ module add nextflow fastqc
 module load nextflow fastqc
 ```
 
-To ensure that the right modules are loaded you can try run module list and see if both Nextflow and FASTQC are loaded. To now run the pipeline, simply enter:
+To ensure that the right modules are loaded you can try run ```module list``` and see if both Nextflow and FASTQC are loaded. To now run the pipeline, simply enter:
 ```
 nextflow run new_pangenome.nf -c ../nextflow.config
 ```
 
-This should run the pipeline and the results from FASTQC and VG Stats will be outputted into the terminal, and more details can be found in /srv/scratch/canpang/pangenome_pipeline/results.
+This should run the pipeline and the results from FASTQC and VG Stats will be outputted into the terminal, and more details can be found in ```/srv/scratch/canpang/pangenome_pipeline/results```.
 
 ### Existing Pangenome
 After changing the 'inputbam' parameter in nextflow.config navigate to the workflow directory and load the necesary modules (Nextflow, MULTIQC, FASTQC and SAMTOOLS). This can be done with the following commands.
@@ -65,12 +65,12 @@ module add nextflow multiqc samtools/1.14 fastqc
 module load nextflow multiqc samtools/1.14 fastqc 
 ```
 
-To ensure that the right modules are loaded you can try run module list and see if all modules are loaded. To now run the pipeline, simply enter:
+To ensure that the right modules are loaded you can try run ```module list``` and see if all modules are loaded. To now run the pipeline, simply enter:
 ```
 nextflow run existing_pangenome.nf -c ../nextflow.config
 ```
 
-This should run the pipeline and the results from VG STATS will be outputted into the terminal, and more details can be found in /srv/scratch/canpang/pangenome_pipeline/results.
+This should run the pipeline and the results from VG STATS will be outputted into the terminal, and more details can be found in ```/srv/scratch/canpang/pangenome_pipeline/results```.
 
 
 ## How to Use - Non-Katana Users (other HPC Systems or Locally)
@@ -98,5 +98,18 @@ From the base direcotry navigate to workflow by entering ```cd workflow```.
 
 ### New Pangnome
 
+After changing nextflow.config's inputFastq paramter, in the workflow directory you can run the pipeline by running:
+```
+nextflow run new_pangenome.nf -c ../nextflow.config
+```
+
+This should run the pipeline and the results from FASTQC and VG Stats will be outputted into the terminal, and more details can be found in ```/pangenome_pipeline/results```.
 
 ### Existing Pangenome
+
+After changing nextflow.config's inputbam paramter, in the workflow directory you can run the pipeline by running:
+```
+nextflow run existing_pangenome.nf -c ../nextflow.config
+```
+
+This should run the pipeline and the results from VG STATS will be outputted into the terminal, and more details can be found in ```/pangenome_pipeline/results```.
