@@ -89,6 +89,13 @@ You will also need to ensure all modules are downloaded on your system:
 
 **NOTE:** You may also need to download and update Java to the latest version.
 
+By navigating through each process in the modules directory, simply replace each instance of the module call with the path of your downloaded modules, for example whenever vg is called (vg autoindex, vg giraffe or vg stats) simply change the path to vg to where your own vg folder is located.
+
+We have a nextflow config file in the base directory where you can pass through a file path (starting from the workflow folder).
+- In nextflow.config we have two parameters: inputbam and inputFastq where you can replace the path to a .BAM File and/or .fq file to suit your research needs (NOTE: inputbam is only read by the exisiting_pangenome.nf and inputFastq is only read by new_pangenome.nf)
+
+From the base direcotry navigate to workflow by entering ```cd workflow```.
+
 ### New Pangnome
 
 
