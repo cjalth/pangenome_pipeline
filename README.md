@@ -1,5 +1,9 @@
 # Using the human pangenome to improve childhood cancer genome analysis
-The draft human reference genome was published in 2000 and has been improving in quality ever since (now version 38) yet is still missing large swathes of DNA sequences. Furthermore, as researchers have sequenced thousands of individuals, and discovered millions of unique genetic variants, it has become apparent that the linear reference genome is no longer the best way to represent all this genetic variation. 
+The draft human reference genome was published in 2000 and has been improving in quality ever since (now version 38) yet is still missing large swathes of DNA sequences. Furthermore, as researchers have sequenced thousands of individuals, and discovered millions of unique genetic variants, it has become apparent that the linear reference genome is no longer the best way to represent all this genetic variation because:
+- It fails to capture the full extent of genetic variation in the human genome,
+- Limits researchers' ability to discover new tumour-specific genetic variants,
+- Restricts the number of comparisons that can be conducted, 
+- It’s inefficiency makes the detection process laborious and time-consuming.
 
 Thus in response, the [pangenome](https://www.nature.com/articles/s41586-023-05896-x#citeas) was created, which is a new approach to storing the reference genome as a graph, with loops in the graph representing each unique genetic variant, meaning each individual has a unique path through the graph. This promises to be both a more efficient way to store population-scale genetic variation and a more accurate way to analyse genetic variation in an individual’s genome.
 
@@ -12,7 +16,7 @@ Our pipeline aligns short-read sequencing data from specifically childhood cance
 
 This will be to the best of our knowledge, the first time this approach has been undertaken for childhood cancer.
 
-We have 2 different pipelines available to be run (in the workflow directory), 
+We have 2 different pipelines available to be run (in the [workflow](https://github.com/cjalth/pangenome_pipeline/tree/main/workflow) directory), 
 1. **new_pangenome.nf** which can be used to create a new pangenome graph and align data sequences to it.
 2. **existing_pangenome.nf** which is used to align a given set of data sequences to an already existing pangenome.
 
@@ -94,7 +98,7 @@ By navigating through each process in the modules directory, simply replace each
 We have a nextflow config file in the base directory where you can pass through a file path (starting from the workflow folder).
 - In nextflow.config we have two parameters: inputbam and inputFastq where you can replace the path to a .BAM File and/or .fq file to suit your research needs (NOTE: inputbam is only read by the exisiting_pangenome.nf and inputFastq is only read by new_pangenome.nf)
 
-From the base direcotry navigate to workflow by entering ```cd workflow```.
+From the base directory navigate to workflow by entering ```cd workflow```.
 
 ### New Pangnome
 
