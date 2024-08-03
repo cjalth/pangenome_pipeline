@@ -12,14 +12,34 @@ Our pipeline aligns short-read sequencing data from specifically childhood cance
 
 This will be to the best of our knowledge, the first time this approach has been undertaken for childhood cancer.
 
-## How to Use - UNSW Restech Katana Users
-Please navigate to /srv/scratch/canpang/pangenome_pipeline to access the two pipelines.
-
-We have 2 different pipelines available to be run (in /srv/scratch/canpang/pangenome_pipeline/workflow, 
+We have 2 different pipelines available to be run (in the workflow directory), 
 1. **new_pangenome.nf** which can be used to create a new pangenome graph and align data sequences to it.
 2. **existing_pangenome.nf** which is used to align a given set of data sequences to an already existing pangenome.
 
-We also have a nextflow config file in /srv/scratch/canpang/pangenome_pipeline where you can pass through a file path (starting from /srv/scratch/canpang/pangenome_pipeline/workflow).
+### New Pangenome
+This pipeline allows you to create your own pangenome and then align the sequences.
+The pipeline runs in the following procedure:
+1. Take in a fastq file of the users chosing.
+2. Pass the fastq file into FASTQC to produce a HTML report about the fastq alignment.
+3. Using the fastq file, the pipelines passes it through vg autoindex to prepare graph creation index files.
+4. Using the outputted indexing files, the pipeline passes these through vg giraffe to produce a graph (.gam file).
+5. Finally, the graph file is passed through vg stats to check the graph alignment is correct.
+
+### Existing Pangenome
+This pipeline allows you to use a current pangenome and align short reads to it.
+The pipeline runs in the following procedure:
+1. Takes in an input bam file of the user's choosing.
+2. Passes the bam file into MULTIQC to produce a HTML report that summarises it's contents and ensures that the bam file is valid
+3. Passes the bam file into SAMTOOLS to extract the fastq file from it.
+4. Passes the extracted fastq file into FASTQC to produce a HTML report about the fastq alignment.
+5. Using the fastq file, the pipelines passes it through vg autoindex to prepare graph creation index files.
+6. Using the outputted indexing files, the pipeline passes these through vg giraffe to produce a graph (.gam file).
+7. Finally, the graph file is passed through vg stats to check the graph alignment is correct.
+
+## How to Use - UNSW Restech Katana Users
+Please navigate to /srv/scratch/canpang/pangenome_pipeline to access the two pipelines.
+
+We have a nextflow config file in /srv/scratch/canpang/pangenome_pipeline where you can pass through a file path (starting from /srv/scratch/canpang/pangenome_pipeline/workflow).
 - In nextflow.config we have two parameters: inputbam and inputFastq where you can replace the path to a .BAM File and/or .fq file to suit your research needs (NOTE: inputbam is only read by the exisiting_pangenome.nf and inputFastq is only read by new_pangenome.nf)
 
 ### New Pangenome
@@ -53,64 +73,28 @@ nextflow run existing_pangenome.nf -c ../nextflow.config
 This should run the pipeline and the results from VG STATS will be outputted into the terminal, and more details can be found in /srv/scratch/canpang/pangenome_pipeline/results.
 
 
-## How to Use - Non-Katana Users
+## How to Use - Non-Katana Users (other HPC Systems or Locally)
 
-### New Pangnome
-This pipeline allows you to create your own pangenome and then align the sequences.
-The pipeline runs in the following procedure:
-1. Take in a fastq file of the users chosing.
-2. Pass the fastq file into FASTQC to produce a HTML report about the fastq alignment.
-3. Using the fastq file, the pipelines passes it through vg autoindex to prepare graph creation index files.
-4. Using the outputted indexing files, the pipeline passes these through vg giraffe to produce a graph (.gam file).
-5. Finally, the graph file is passed through vg stats to check the graph alignment is correct.
-
-To use this pipeline, you would need to download or *git clone* the **new_pangenome.nf** file in the workflow folder and the following modules: 
-- [autoindex](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/autoindex)
-- [fastqc](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/fastqc)
-- [vggiraffe](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/vggiraffe)
-- [vgstats](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/vgstats)
-like this:
+To use this tool, you will need to clone this directory through:
 ```
 git clone https://github.com/cjalth/pangenome_pipeline.git
 ```
-To run the pipeline, have the data sequence file in your current directory and run these commands in the terminal:
-```
-module add fastqc nextflow java
-```
-```
-module load fastqc nextflow java
-```
-```
-cd workflow
-nextflow run workflow/new_pangenome.nf -c ../nextflow.config
-```
-All resulting data such as the pangenome graph and the fastqc analysis results would be stored in the [results](https://github.com/cjalth/pangenome_pipeline/tree/main/results) folder
+
+You will also need to ensure all modules are downloaded on your system:
+- [Nextflow](https://www.nextflow.io/docs/latest/install.html)
+- [MultiQC](https://multiqc.info/docs/getting_started/installation/)
+- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- [Samtools](https://www.htslib.org/download/)
+- [VG](https://github.com/vgteam/vg/releases/tag/v1.58.0)
+
+**NOTE:** You may also need to download and update Java to the latest version.
+
+### New Pangnome
+
 
 
 ### Existing Pangenome
-This pipeline allows you to use a current pangenome and align short reads to it.
-The pipeline runs in the following procedure:
-1. Takes in an input bam file of the user's choosing.
-2. Passes the bam file into MULTIQC to produce a HTML report that summarises it's contents and ensures that the bam file is valid
-3. Passes the bam file into SAMTOOLS to extract the fastq file from it.
-4. Passes the extracted fastq file into FASTQC to produce a HTML report about the fastq alignment.
-5. Using the fastq file, the pipelines passes it through vg autoindex to prepare graph creation index files.
-6. Using the outputted indexing files, the pipeline passes these through vg giraffe to produce a graph (.gam file).
-7. Finally, the graph file is passed through vg stats to check the graph alignment is correct.
 
-To use this pipeline, you would need to download or *git clone* the **existing_pangenome.nf** file in the workflow folder and the following modules: **[autoindex](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/autoindex), [fastqc](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/fastqc), [multiqc](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/multiqc), [samtools](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/samtools), [vggiraffe](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/vggiraffe) and [vgstats](https://github.com/cjalth/pangenome_pipeline/tree/main/modules/vgstats)** like this:
-```
-git clone https://github.com/cjalth/pangenome_pipeline.git
-```
-To run the pipeline, have the data sequence file in your current directory and run these commands in the terminal:
-```
-module add fastqc nextflow java multiqc samtools/1.14
-```
-```
-module load fastqc nextflow java multiqc samtools/1.14
-```
-```
-nextflow run workflow/existing_pangenome.nf -c ../nextflow.config
 ```
 All resulting data such as the pangenome graph, the fastqc analysis results, the multiqc analysis results and the extracted fastq file from the given .bam file would be stored in the [results](https://github.com/cjalth/pangenome_pipeline/tree/main/results) folder
 
